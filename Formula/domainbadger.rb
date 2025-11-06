@@ -5,21 +5,21 @@
 class Domainbadger < Formula
   desc "CLI tool for domain information lookup"
   homepage "https://github.com/emmanuelay/domainbadger"
-  version "0.3.0"
+  version "0.3.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/emmanuelay/domainbadger/releases/download/v0.3.0/domainbadger_0.3.0_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "991cd2ad5d82ec48e212709ed16ded9f92aa2cc95bbec1288653ae795eda2d94"
+      url "https://github.com/emmanuelay/domainbadger/releases/download/v0.3.2/domainbadger_0.3.2_darwin_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "bb24259c722aed629cd3ccb238eea2cfd870cfdb5a5ba035ab1ed9e9e0396b86"
 
       def install
         bin.install "domainbadger"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/emmanuelay/domainbadger/releases/download/v0.3.0/domainbadger_0.3.0_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "e4f5d3bc7bc3aaf8f60df9d7dab4f6501c3fe6f7792d42394059c78bae54d9bd"
+      url "https://github.com/emmanuelay/domainbadger/releases/download/v0.3.2/domainbadger_0.3.2_darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "44065ecc2e915f0930468468b3afb87026dda3a4b4038d24c5fbcf5fdb0361df"
 
       def install
         bin.install "domainbadger"
@@ -29,15 +29,15 @@ class Domainbadger < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/emmanuelay/domainbadger/releases/download/v0.3.0/domainbadger_0.3.0_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "f51af4a4dc2813166be7a1883fad8a375e5d745e7168f011e475cbb8cb8fb904"
+      url "https://github.com/emmanuelay/domainbadger/releases/download/v0.3.2/domainbadger_0.3.2_linux_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "caf23c774556ad0e59d7ca7526cdbb10f18f0cecea24200bbb6a86c47906c976"
       def install
         bin.install "domainbadger"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/emmanuelay/domainbadger/releases/download/v0.3.0/domainbadger_0.3.0_linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "b3fa75e0a72e1e700c4e44309111cb53919287ec1ce6320c6f5e66336e243385"
+      url "https://github.com/emmanuelay/domainbadger/releases/download/v0.3.2/domainbadger_0.3.2_linux_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "e4ae66c7611513efd849f925a624a47e5bcbe7938ffa22dba322a04aff91d430"
       def install
         bin.install "domainbadger"
       end
