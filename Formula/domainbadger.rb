@@ -5,60 +5,46 @@
 class Domainbadger < Formula
   desc "CLI tool for domain information lookup"
   homepage "https://github.com/emmanuelay/domainbadger"
-  version "0.2.1"
+  version "0.3.0"
   license "MIT"
-
-  depends_on "go" => :build
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/emmanuelay/domainbadger/archive/v0.2.1.tar.gz"
-      sha256 "cde63e07f6e54c89ef69933adac36f9da678e93c389907a197b71e3a384e1211"
+      url "https://github.com/emmanuelay/domainbadger/releases/download/v0.3.0/domainbadger_0.3.0_darwin_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "991cd2ad5d82ec48e212709ed16ded9f92aa2cc95bbec1288653ae795eda2d94"
 
       def install
-        system "go", "build", "-ldflags",
-               "-s -w -X main.version=#{version}",
-               "-o", bin/"domainbadger",
-               "./cmd/domainbadger"
+        bin.install "domainbadger"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/emmanuelay/domainbadger/archive/v0.2.1.tar.gz"
-      sha256 "a4f2c1004d18d81fa50fea3972df84242a675d038cda2da9a5e45c8f1213a20b"
+      url "https://github.com/emmanuelay/domainbadger/releases/download/v0.3.0/domainbadger_0.3.0_darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "e4f5d3bc7bc3aaf8f60df9d7dab4f6501c3fe6f7792d42394059c78bae54d9bd"
 
       def install
-        system "go", "build", "-ldflags",
-               "-s -w -X main.version=#{version}",
-               "-o", bin/"domainbadger",
-               "./cmd/domainbadger"
+        bin.install "domainbadger"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/emmanuelay/domainbadger/archive/v0.2.1.tar.gz"
-      sha256 "7e72057cd85332e048ff1ae5f4351d5e90edab6d3da2ca7cb66d238eaa23c448"
+      url "https://github.com/emmanuelay/domainbadger/releases/download/v0.3.0/domainbadger_0.3.0_linux_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "f51af4a4dc2813166be7a1883fad8a375e5d745e7168f011e475cbb8cb8fb904"
       def install
-        system "go", "build", "-ldflags",
-               "-s -w -X main.version=#{version}",
-               "-o", bin/"domainbadger",
-               "./cmd/domainbadger"
+        bin.install "domainbadger"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/emmanuelay/domainbadger/archive/v0.2.1.tar.gz"
-      sha256 "16a14b4448d102e77cede9b997d5a4a781636bc9b29d78c41eb0a433c67bda93"
+      url "https://github.com/emmanuelay/domainbadger/releases/download/v0.3.0/domainbadger_0.3.0_linux_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "b3fa75e0a72e1e700c4e44309111cb53919287ec1ce6320c6f5e66336e243385"
       def install
-        system "go", "build", "-ldflags",
-               "-s -w -X main.version=#{version}",
-               "-o", bin/"domainbadger",
-               "./cmd/domainbadger"
+        bin.install "domainbadger"
       end
     end
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/domainbadger --version")
+    assert_match version.to_s, shell_outp
   end
 end
