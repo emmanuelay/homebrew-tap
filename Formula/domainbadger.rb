@@ -24,7 +24,7 @@ class Domainbadger < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/emmanuelay/domainbadger/archive/v0.2.1.tar.gz"
-      sha256 "251329d6b6b53011127c58ef7c1e860a1be782dacf8a2b04c8441e17eeda77dc"
+      sha256 "a4f2c1004d18d81fa50fea3972df84242a675d038cda2da9a5e45c8f1213a20b"
 
       def install
         system "go", "build", "-ldflags",
