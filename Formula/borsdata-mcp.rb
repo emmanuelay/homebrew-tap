@@ -11,7 +11,7 @@ class BorsdataMcp < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/emmanuelay/borsdata-mcp/releases/download/v0.0.1/borsdata-mcp_0.0.1_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "a89688aa383a494c39058d0873a10e8b497d05a08f0493032158b1d08f2ef114"
+      sha256 "fac9f6f326ed0d0a2d3871032fd4b77cd79da87c0263414d27858d126911f377"
 
       define_method(:install) do
         bin.install "borsdata-mcp"
@@ -19,7 +19,7 @@ class BorsdataMcp < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/emmanuelay/borsdata-mcp/releases/download/v0.0.1/borsdata-mcp_0.0.1_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "d6635c3c5f299839d76b57d3bc909c7d98c451e19222adfe2576b4e84079fd01"
+      sha256 "f525ae249a8a81ee193da4d5f4e9cfe6249f9fc8bbdf9e3362964b2674437313"
 
       define_method(:install) do
         bin.install "borsdata-mcp"
@@ -30,14 +30,14 @@ class BorsdataMcp < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/emmanuelay/borsdata-mcp/releases/download/v0.0.1/borsdata-mcp_0.0.1_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "fb07d79f0046ef102df7b2e75dc082040d43cb71ba56705fe79b4652b883cb47"
+      sha256 "d07ffce1385595fa0764e64388162065da10ea8923605702c4edd041862e68e8"
       define_method(:install) do
         bin.install "borsdata-mcp"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/emmanuelay/borsdata-mcp/releases/download/v0.0.1/borsdata-mcp_0.0.1_linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "d7188d6e9dbca50eb6c4ba76823c5a35923d7b780bbb8b88d8f3df13043ae0cf"
+      sha256 "67aeb44d275d8ce96f54ea6b810ba1dcff5b058e139fb2796457f5b9d136df2a"
       define_method(:install) do
         bin.install "borsdata-mcp"
       end
