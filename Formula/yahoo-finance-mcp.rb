@@ -5,23 +5,23 @@
 class YahooFinanceMcp < Formula
   desc "MCP server for Yahoo Finance data"
   homepage "https://github.com/emmanuelay/yahoo-finance-mcp"
-  version "0.0.1"
+  version "0.0.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/emmanuelay/yahoo-finance-mcp/releases/download/v0.0.1/yahoo-finance-mcp_0.0.1_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "287f20561fc4adb8afb7e77f4a360119ddcecb8c40ecdf319eeb2acdd1492317"
+      url "https://github.com/emmanuelay/yahoo-finance-mcp/releases/download/v0.0.2/yahoo-finance-mcp_0.0.2_darwin_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "c28007f893e939e4108f73d21ff7e2f82a7384d33276eda2c17a6e0293afb742"
 
-      def install
+      define_method(:install) do
         bin.install "yahoo-finance-mcp"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/emmanuelay/yahoo-finance-mcp/releases/download/v0.0.1/yahoo-finance-mcp_0.0.1_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "180d7afe06bf96902ee4097e90915cfc3ae63824407caf3a6d2c327af22dbc74"
+      url "https://github.com/emmanuelay/yahoo-finance-mcp/releases/download/v0.0.2/yahoo-finance-mcp_0.0.2_darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "049027c746252187ba0bed0422bbcb5c44723946444f6c354d44a9240a2bec05"
 
-      def install
+      define_method(:install) do
         bin.install "yahoo-finance-mcp"
       end
     end
@@ -29,16 +29,16 @@ class YahooFinanceMcp < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/emmanuelay/yahoo-finance-mcp/releases/download/v0.0.1/yahoo-finance-mcp_0.0.1_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "8489b47f5407c6c2fbea9d5aaeb7b74c952c4524fbf0eed7e7ed04900d4e70ab"
-      def install
+      url "https://github.com/emmanuelay/yahoo-finance-mcp/releases/download/v0.0.2/yahoo-finance-mcp_0.0.2_linux_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "b23c9be2ba89f6c0ff0eda44abc6a9ceae33941376e799a83ef28bf782348285"
+      define_method(:install) do
         bin.install "yahoo-finance-mcp"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/emmanuelay/yahoo-finance-mcp/releases/download/v0.0.1/yahoo-finance-mcp_0.0.1_linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "4bb323d93156d3ce9f48586ad83f4d9a9fa5023baa01ce0a38f61bbcd274e43a"
-      def install
+      url "https://github.com/emmanuelay/yahoo-finance-mcp/releases/download/v0.0.2/yahoo-finance-mcp_0.0.2_linux_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "8c3d42be238b8aebaad6a996c4b276161a791618f6d20082f349db924f02374d"
+      define_method(:install) do
         bin.install "yahoo-finance-mcp"
       end
     end
